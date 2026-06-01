@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Robot-Readiness Assessment — Ready State</title>
+<meta name="description" content="Get your property's robot-readiness score in 2 minutes. A free self-assessment of connectivity, power, space, and safety — with tailored next steps." />
+<meta name="theme-color" content="#0E1417" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Free Robot-Readiness Assessment — Ready State" />
+<meta property="og:description" content="Is your home or property ready for a robot? Get an instant readiness score and a tailored plan." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='7' fill='%230E1417'/%3E%3Cpath d='M10 20.5h2.4v-4.2H10zM14.8 20.5h2.4V13h-2.4zM19.6 20.5H22V9.5h-2.4z' fill='%2310B5A2'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0E1417;--ink-2:#19232A;--paper:#F4F2EC;--paper-2:#FBFAF7;
+    --muted:#586A72;--muted-2:#8A98A0;--line:rgba(14,20,23,.12);--line-2:rgba(14,20,23,.07);
+    --accent:#10B5A2;--accent-deep:#0A7E72;--accent-soft:rgba(16,181,162,.12);
+    --warm:#D08A3E;--warn:#D4663A;
+    --radius:16px;--radius-lg:24px;--maxw:880px;
+    --shadow:0 1px 2px rgba(14,20,23,.04), 0 12px 32px -12px rgba(14,20,23,.16);
+    --shadow-lg:0 2px 6px rgba(14,20,23,.06), 0 30px 60px -24px rgba(14,20,23,.30);
+    --font-display:"Fraunces",Georgia,serif;--font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin:0;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);display:inline-flex;align-items:center;gap:.6em;}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--accent-deep);opacity:.6;}
+  .btn{display:inline-flex;align-items:center;gap:.55em;justify-content:center;font-weight:600;font-size:1rem;padding:.95em 1.6em;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .25s ease,background .2s ease,color .2s ease,border-color .2s ease;font-family:inherit;}
+  .btn-primary{background:var(--ink);color:var(--paper-2);box-shadow:var(--shadow);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);background:#05090b;}
+  .btn-accent{background:var(--accent);color:#04201d;box-shadow:0 8px 24px -8px rgba(16,181,162,.55);}
+  .btn-accent:hover{transform:translateY(-2px);background:#13c6b1;}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
+  .btn[disabled]{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none;}
+  .arr{transition:transform .2s ease;}.btn:hover .arr{transform:translateX(3px);}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:40;background:rgba(244,242,236,.85);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--line-2);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:.6em;font-weight:600;font-size:1.1rem;}
+  .brand .st{color:var(--muted);}
+  .back{font-size:.92rem;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:.4em;transition:color .18s;}
+  .back:hover{color:var(--ink);}
+
+  main{padding:40px 0 80px;min-height:70vh;}
+
+  /* Intro */
+  .intro{text-align:center;max-width:680px;margin:18px auto 0;}
+  .intro h1{font-size:clamp(2.1rem,5vw,3.2rem);margin:.45em 0 .4em;}
+  .intro h1 .em{font-style:italic;font-weight:400;}
+  .intro p{font-size:1.12rem;color:var(--muted);max-width:34em;margin:0 auto 1.7em;}
+  .intro .meta{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:26px 0 32px;color:var(--muted);font-size:.95rem;}
+  .intro .meta b{color:var(--ink);font-weight:600;}
+  .intro .meta span{display:inline-flex;align-items:center;gap:.5em;}
+
+  /* Quiz card */
+  .card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:34px;max-width:720px;margin:0 auto;}
+  .progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:8px;}
+  .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-deep));border-radius:99px;transition:width .4s cubic-bezier(.3,.7,.2,1);}
+  .qmeta{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--muted-2);font-weight:600;letter-spacing:.04em;margin-bottom:22px;}
+  .qcat{color:var(--accent-deep);text-transform:uppercase;letter-spacing:.12em;}
+  .qtext{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.85rem);font-weight:600;margin-bottom:6px;}
+  .qhelp{color:var(--muted);font-size:.98rem;margin-bottom:22px;}
+  .opts{display:flex;flex-direction:column;gap:12px;}
+  .opt{display:flex;align-items:center;gap:14px;text-align:left;width:100%;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;cursor:pointer;font-family:inherit;font-size:1.02rem;color:var(--ink);transition:border-color .15s ease,background .15s ease,transform .12s ease;}
+  .opt:hover{border-color:var(--accent);transform:translateY(-1px);}
+  .opt .tick{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;transition:.15s;}
+  .opt .tick svg{opacity:0;transform:scale(.5);transition:.15s;color:#fff;}
+  .opt.sel{border-color:var(--accent);background:var(--accent-soft);}
+  .opt.sel .tick{background:var(--accent);border-color:var(--accent);}
+  .opt.sel .tick svg{opacity:1;transform:scale(1);}
+  .qnav{display:flex;justify-content:space-between;align-items:center;margin-top:26px;}
+  .qnav .back-btn{background:none;border:0;color:var(--muted);font-weight:600;font-family:inherit;font-size:.95rem;cursor:pointer;padding:8px;display:inline-flex;align-items:center;gap:.4em;}
+  .qnav .back-btn:hover{color:var(--ink);}
+  .qnav .back-btn[disabled]{opacity:0;pointer-events:none;}
+
+  /* Results */
+  .results{max-width:760px;margin:0 auto;}
+  .score-head{display:flex;gap:34px;align-items:center;background:var(--ink);color:var(--paper);border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-lg);}
+  .gauge{flex:0 0 auto;position:relative;width:160px;height:160px;}
+  .gauge svg{transform:rotate(-90deg);}
+  .gauge .val{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .gauge .val b{font-family:var(--font-display);font-size:2.9rem;font-weight:600;line-height:1;}
+  .gauge .val small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-top:3px;}
+  .score-copy .tier{font-family:var(--font-display);font-size:clamp(1.6rem,4vw,2.3rem);font-weight:600;margin-bottom:.2em;}
+  .score-copy p{color:#C4D2D6;font-size:1.05rem;}
+  .score-copy .echo{margin-top:10px;font-size:.9rem;color:var(--muted-2);}
+
+  .breakdown{margin-top:26px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px;}
+  .breakdown h3{font-size:1.3rem;margin-bottom:6px;}
+  .breakdown .sub{color:var(--muted);font-size:.98rem;margin-bottom:22px;}
+  .bd-row{padding:16px 0;border-top:1px solid var(--line-2);}
+  .bd-row:first-of-type{border-top:0;}
+  .bd-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:9px;}
+  .bd-top .name{font-weight:600;font-size:1.02rem;}
+  .bd-top .pct{font-family:var(--font-display);font-weight:600;font-size:1.05rem;}
+  .bar{height:9px;background:var(--line);border-radius:99px;overflow:hidden;}
+  .bar span{display:block;height:100%;width:0;border-radius:99px;transition:width .9s cubic-bezier(.3,.7,.2,1);}
+  .bd-note{margin-top:10px;font-size:.92rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start;}
+  .bd-note svg{flex:0 0 auto;margin-top:3px;color:var(--warm);}
+
+  .nextsteps{margin-top:26px;background:linear-gradient(160deg,#102b29,#0E1417);color:var(--paper);border-radius:var(--radius-lg);padding:34px;}
+  .nextsteps .eyebrow{color:var(--accent);}.nextsteps .eyebrow::before{background:var(--accent);}
+  .nextsteps h3{font-size:1.6rem;margin:.4em 0 .4em;}
+  .nextsteps p{color:#C4D2D6;margin-bottom:20px;}
+  .lead{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;}
+  .lead input{width:100%;font-family:inherit;font-size:1rem;padding:12px 14px;border-radius:11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:var(--paper);}
+  .lead input::placeholder{color:#8AA0A4;}
+  .lead input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(16,181,162,.18);}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .mini{margin-top:16px;font-size:.82rem;color:var(--muted-2);}
+  .retake{text-align:center;margin-top:26px;}
+  .retake button{background:none;border:0;color:var(--muted);font-weight:600;font-family:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+  .retake button:hover{color:var(--ink);}
+
+  .disclaimer{max-width:720px;margin:30px auto 0;text-align:center;font-size:.82rem;color:var(--muted-2);}
+
+  footer{background:var(--ink);color:#AFC0C5;padding:34px 0;}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.88rem;}
+  .foot a:hover{color:var(--paper);}
+
+  .hidden{display:none !important;}
+  @media (max-width:640px){
+    .card{padding:24px;}
+    .score-head{flex-direction:column;text-align:center;gap:20px;padding:26px;}
+    .lead{grid-template-columns:1fr;}
+    .nextsteps,.breakdown{padding:24px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Ready State home">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect x="2.5" y="2.5" width="27" height="27" rx="8" fill="#0E1417"/><path d="M9.5 21.5h2.6v-4.6H9.5zM14.7 21.5h2.6V12h-2.6zM19.9 21.5h2.6V8.5h-2.6z" fill="#10B5A2"/></svg>
+        <span><b>Ready</b> <span class="st">State</span></span>
+      </a>
+      <a class="back" href="index.html">‹ Back to site</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- INTRO -->
+  <section id="intro" class="intro">
+    <span class="eyebrow" style="justify-content:center;">Free · 2 minutes · No sign-up</span>
+    <h1>Is your property <span class="em">robot-ready?</span></h1>
+    <p>Answer a few questions about your home or property and get an instant readiness score — plus exactly where the gaps are and what to do about them.</p>
+    <div class="meta">
+      <span>✓ <b>Instant</b> score</span>
+      <span>✓ <b>6</b> areas checked</span>
+      <span>✓ <b>Tailored</b> next steps</span>
+    </div>
+    <button class="btn btn-accent" id="startBtn">Start the assessment <span class="arr">→</span></button>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="card hidden" aria-live="polite">
+    <div class="progress"><span id="progFill"></span></div>
+    <div class="qmeta"><span id="qStep">Question 1</span><span class="qcat" id="qCat"></span></div>
+    <div class="qtext" id="qText"></div>
+    <div class="qhelp" id="qHelp"></div>
+    <div class="opts" id="opts"></div>
+    <div class="qnav">
+      <button class="back-btn" id="prevBtn" disabled>‹ Back</button>
+      <button class="btn btn-primary" id="nextBtn" disabled>Next <span class="arr">→</span></button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="results hidden">
+    <div class="score-head">
+      <div class="gauge">
+        <svg width="160" height="160" viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="14"/>
+          <circle id="gaugeArc" cx="80" cy="80" r="70" fill="none" stroke="#10B5A2" stroke-width="14" stroke-linecap="round" stroke-dasharray="439.8" stroke-dashoffset="439.8"/>
+        </svg>
+        <div class="val"><b id="scoreNum">0</b><small>/ 100</small></div>
+      </div>
+      <div class="score-copy">
+        <div class="tier" id="tierLabel">—</div>
+        <p id="tierBlurb"></p>
+        <div class="echo" id="echo"></div>
+      </div>
+    </div>
+
+    <div class="breakdown">
+      <h3>Where you stand</h3>
+      <p class="sub">Your readiness across the six areas that decide whether a robot works reliably.</p>
+      <div id="bdRows"></div>
+    </div>
+
+    <div class="nextsteps">
+      <span class="eyebrow">Your next step</span>
+      <h3 id="nsHead">Turn this score into a plan.</h3>
+      <p id="nsBody"></p>
+      <div class="lead">
+        <input type="text" id="leadName" placeholder="Your name" autocomplete="name" />
+        <input type="email" id="leadEmail" placeholder="Email" autocomplete="email" />
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-accent" id="bookBtn" href="#">Request my on-site assessment <span class="arr">→</span></a>
+        <button class="btn btn-ghost" id="printBtn" style="color:#fff;border-color:rgba(255,255,255,.25);">Save / print results</button>
+      </div>
+      <p class="mini">Sends your results to Ready State so we can scope a professional assessment. No obligation.</p>
+    </div>
+
+    <div class="retake"><button id="retakeBtn">↻ Retake the assessment</button></div>
+  </section>
+
+  <p class="disclaimer">This self-assessment is a general guide, not a substitute for an on-site evaluation. Robot capabilities and requirements vary by model.</p>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Ready State — robot-readiness for homes &amp; hospitality.</span>
+    <span><a href="index.html">← readystate</a> · © <span id="yr"></span></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var CONTACT_EMAIL = 'hello@readystate.co'; // TODO(Randy): your real address
+
+/* ---------- Profile (not scored) + scored questions ---------- */
+var PROFILE = [
+  { id:'ptype', q:'What kind of property is this?', help:'So we tailor the result to your situation.',
+    opts:['Luxury or mountain home','Hospitality, lodge or club','Senior or assisted living','Property-management portfolio'] },
+  { id:'timeline', q:'When are you bringing in a robot?', help:'No wrong answer — earlier is actually better for readiness.',
+    opts:['I already have one','In the next 6 months','Sometime this year','Just exploring'] }
+];
+
+var WEIGHTS = { connectivity:26, network:18, power:16, space:18, safety:14, privacy:8 };
+var CATLABEL = { connectivity:'Wi-Fi coverage', network:'Network backbone', power:'Power', space:'Space & navigation', safety:'Safety & zoning', privacy:'Privacy & data' };
+
+var QUESTIONS = [
+  { cat:'connectivity', q:'How would you describe Wi-Fi coverage across the whole property?', help:'Robots roam — coverage has to be even, not just strong near the router.',
+    opts:[
+      {t:'Strong everywhere, including far rooms and outdoors', p:10},
+      {t:'Good in the main areas, weak spots elsewhere', p:6, note:'Robots wander into the weak spots. Coverage needs to be even end to end.'},
+      {t:'Only really reliable near the router', p:3, note:'A single router won’t cover a property a robot moves through.'},
+      {t:'Frequent dead zones or drop-offs', p:0, note:'Dead zones are the #1 reason robots stall — this is priority one.'}
+    ]},
+  { cat:'connectivity', q:'What Wi-Fi equipment is installed?', help:'',
+    opts:[
+      {t:'Pro-grade mesh / Wi-Fi 6 or better, placed by a tech', p:10},
+      {t:'A newer single router or basic mesh kit', p:6, note:'Consumer mesh struggles with the fast hand-offs a moving robot needs.'},
+      {t:'The combo unit from the internet provider', p:3, note:'ISP combo units are usually the weakest link for robot reliability.'},
+      {t:'Not sure what’s installed', p:2, note:'Worth an audit — you can’t tune what you can’t see.'}
+    ]},
+  { cat:'network', q:'How do the Wi-Fi access points connect back?', help:'Wired backhaul keeps robots fast and stable.',
+    opts:[
+      {t:'Wired (Ethernet) backhaul to each access point', p:10},
+      {t:'A mix of wired and wireless', p:6},
+      {t:'All wireless, or a single device', p:3, note:'Wireless-only backhaul adds the lag and drops robots feel most.'},
+      {t:'Don’t know', p:2}
+    ]},
+  { cat:'network', q:'How reliable is the internet, and is there a backup?', help:'',
+    opts:[
+      {t:'Business-class with an automatic backup (Starlink/LTE)', p:8},
+      {t:'Reliable, but no backup line', p:6, note:'A backup path keeps robots working through outages.'},
+      {t:'Occasional outages', p:3},
+      {t:'Spotty or slow', p:0, note:'Robots lose their brains when the link drops — redundancy matters.'}
+    ]},
+  { cat:'power', q:'Are there outlets where a charging dock would live (entry, utility, kitchen)?', help:'',
+    opts:[
+      {t:'Plenty, in convenient spots', p:9},
+      {t:'Some, may need a little work', p:6},
+      {t:'Few, or awkwardly placed', p:2, note:'Dock placement decides where a robot can reliably return to charge.'},
+      {t:'Not sure', p:3}
+    ]},
+  { cat:'power', q:'Is there backup power during an outage?', help:'',
+    opts:[
+      {t:'Whole-property generator or UPS', p:7},
+      {t:'Partial — some circuits', p:4},
+      {t:'None', p:1, note:'Even a small UPS on the network gear keeps a robot online through blips.'}
+    ]},
+  { cat:'space', q:'What’s the floor layout like for a robot moving room to room?', help:'',
+    opts:[
+      {t:'Open, mostly single-level, few thresholds', p:9},
+      {t:'Mostly open with some steps or thresholds', p:6},
+      {t:'Multi-level with stairs', p:3, note:'Stairs are a hard boundary for today’s robots — plan zones per level.'},
+      {t:'Tight or cluttered pathways', p:1, note:'Clear, predictable paths are what keep a robot from getting stuck.'}
+    ]},
+  { cat:'space', q:'What are the main floor surfaces?', help:'',
+    opts:[
+      {t:'Hard, even floors throughout', p:9},
+      {t:'Hard floors with some low rugs', p:6},
+      {t:'Thick carpet or uneven surfaces', p:3},
+      {t:'Lots of transitions and obstacles', p:1}
+    ]},
+  { cat:'safety', q:'Are there areas a robot must avoid (pets, kids, fragile, private)?', help:'',
+    opts:[
+      {t:'Clearly known and easy to zone off', p:7},
+      {t:'A few, manageable', p:5},
+      {t:'Many, or complex', p:2, note:'Complex no-go mapping is exactly what a setup pro handles.'},
+      {t:'Haven’t thought about it yet', p:3}
+    ]},
+  { cat:'safety', q:'Who is usually on-site?', help:'More foot traffic means more careful zoning.',
+    opts:[
+      {t:'A predictable household or small team', p:7},
+      {t:'A mixed household or staff', p:5},
+      {t:'Regular guests', p:3},
+      {t:'Public or high-turnover traffic', p:1, note:'Heavier traffic calls for tighter safety zoning and setup.'}
+    ]},
+  { cat:'privacy', q:'How do you feel about a robot’s cameras and mics operating in the space?', help:'',
+    opts:[
+      {t:'Fine, with clear settings', p:8},
+      {t:'Okay, within limits', p:5},
+      {t:'Somewhat concerned', p:2, note:'No-go zones, face-blurring, and data rules can be set to your comfort.'},
+      {t:'I’d need guidance first', p:4, note:'We walk you through privacy setup before anything goes live.'}
+    ]}
+];
+
+var TIERS = [
+  { min:85, label:'Robot-Ready', color:'#10B5A2', blurb:'Your property is in great shape. A robot would work well here with only light tuning.' },
+  { min:70, label:'Nearly Ready', color:'#10B5A2', blurb:'You’re close. A few targeted upgrades and you’re set up for reliable day-one performance.' },
+  { min:50, label:'Needs Some Prep', color:'#D08A3E', blurb:'The bones are there, but a robot would hit friction without some prep work first.' },
+  { min:0,  label:'Not Ready Yet', color:'#D4663A', blurb:'Foundational work is needed first — much better (and cheaper) to fix now than to chase failures later.' }
+];
+
+/* ---------- State + flow ---------- */
+var profileAns = {}, answers = [], idx = 0;
+var TOTAL = PROFILE.length + QUESTIONS.length;
+
+var el = function(id){ return document.getElementById(id); };
+el('startBtn').addEventListener('click', function(){
+  el('intro').classList.add('hidden');
+  el('quiz').classList.remove('hidden');
+  idx = 0; render();
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+function current(){ return idx < PROFILE.length ? PROFILE[idx] : QUESTIONS[idx - PROFILE.length]; }
+function isProfile(){ return idx < PROFILE.length; }
+function storedAnswer(){
+  if(isProfile()) return profileAns[current().id];
+  return answers[idx - PROFILE.length];
+}
+
+function render(){
+  var q = current();
+  el('progFill').style.width = (idx / TOTAL * 100) + '%';
+  el('qStep').textContent = 'Question ' + (idx + 1) + ' of ' + TOTAL;
+  el('qCat').textContent = isProfile() ? 'About you' : CATLABEL[q.cat];
+  el('qText').textContent = q.q;
+  el('qHelp').textContent = q.help || '';
+  el('qHelp').style.display = q.help ? 'block' : 'none';
+
+  var opts = el('opts'); opts.innerHTML = '';
+  var list = isProfile() ? q.opts : q.opts.map(function(o){ return o.t; });
+  var sel = storedAnswer();
+  list.forEach(function(label, i){
+    var b = document.createElement('button');
+    b.className = 'opt' + ((sel !== undefined && sel === i) ? ' sel' : '');
+    b.innerHTML = '<span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span>' + label + '</span>';
+    b.addEventListener('click', function(){
+      if(isProfile()) profileAns[current().id] = i;
+      else answers[idx - PROFILE.length] = i;
+      Array.prototype.forEach.call(opts.children, function(c){ c.classList.remove('sel'); });
+      b.classList.add('sel');
+      el('nextBtn').disabled = false;
+    });
+    opts.appendChild(b);
+  });
+
+  el('prevBtn').disabled = (idx === 0);
+  el('nextBtn').disabled = (sel === undefined);
+  el('nextBtn').innerHTML = (idx === TOTAL - 1) ? 'See my score <span class="arr">→</span>' : 'Next <span class="arr">→</span>';
+}
+
+el('nextBtn').addEventListener('click', function(){
+  if(idx === TOTAL - 1){ finish(); return; }
+  idx++; render(); el('quiz').scrollIntoView({behavior:'smooth', block:'start'});
+});
+el('prevBtn').addEventListener('click', function(){
+  if(idx === 0) return; idx--; render(); el('quiz').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+/* ---------- Scoring ---------- */
+function compute(){
+  var cat = {}; // cat -> {got, max}
+  QUESTIONS.forEach(function(q, i){
+    var max = Math.max.apply(null, q.opts.map(function(o){ return o.p; }));
+    var got = q.opts[answers[i]].p;
+    if(!cat[q.cat]) cat[q.cat] = {got:0, max:0, weak:null, weakP:99};
+    cat[q.cat].got += got; cat[q.cat].max += max;
+    var note = q.opts[answers[i]].note;
+    if(note && got < cat[q.cat].weakP){ cat[q.cat].weak = note; cat[q.cat].weakP = got; }
+  });
+  var overall = 0, cats = [];
+  Object.keys(WEIGHTS).forEach(function(k){
+    var pct = Math.round(cat[k].got / cat[k].max * 100);
+    overall += pct * WEIGHTS[k] / 100;
+    cats.push({ key:k, label:CATLABEL[k], pct:pct, weight:WEIGHTS[k], note:cat[k].weak });
+  });
+  overall = Math.round(overall);
+  var tier = TIERS.find(function(t){ return overall >= t.min; });
+  return { overall:overall, tier:tier, cats:cats };
+}
+
+function colorFor(pct){ return pct >= 70 ? '#10B5A2' : pct >= 50 ? '#D08A3E' : '#D4663A'; }
+
+function finish(){
+  var r = compute();
+  el('quiz').classList.add('hidden');
+  el('results').classList.remove('hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
+
+  // gauge
+  var C = 439.8, arc = el('gaugeArc');
+  arc.setAttribute('stroke', r.tier.color);
+  el('tierLabel').textContent = r.tier.label;
+  el('tierLabel').style.color = r.tier.color;
+  el('tierBlurb').textContent = r.tier.blurb;
+  var pt = PROFILE[0].opts[profileAns['ptype']] || '';
+  var tl = PROFILE[1].opts[profileAns['timeline']] || '';
+  el('echo').textContent = (pt ? pt : '') + (tl ? '  ·  ' + tl : '');
+
+  // animate number + arc
+  var target = r.overall, n = 0;
+  arc.style.strokeDashoffset = C;
+  setTimeout(function(){ arc.style.strokeDashoffset = C * (1 - target/100); }, 120);
+  var step = Math.max(1, Math.round(target/40));
+  var tick = setInterval(function(){
+    n += step; if(n >= target){ n = target; clearInterval(tick); }
+    el('scoreNum').textContent = n;
+  }, 22);
+
+  // breakdown
+  var rows = el('bdRows'); rows.innerHTML = '';
+  var sorted = r.cats.slice().sort(function(a,b){ return a.pct - b.pct; });
+  r.cats.forEach(function(c){
+    var div = document.createElement('div'); div.className = 'bd-row';
+    var noteHtml = c.note ? '<div class="bd-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg><span>' + c.note + '</span></div>' : '';
+    div.innerHTML =
+      '<div class="bd-top"><span class="name">' + c.label + '</span><span class="pct" style="color:' + colorFor(c.pct) + '">' + c.pct + '%</span></div>' +
+      '<div class="bar"><span data-w="' + c.pct + '" style="background:' + colorFor(c.pct) + '"></span></div>' + noteHtml;
+    rows.appendChild(div);
+  });
+  setTimeout(function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.bar span'), function(s){ s.style.width = s.getAttribute('data-w') + '%'; });
+  }, 200);
+
+  // next steps copy
+  var gaps = sorted.filter(function(c){ return c.pct < 75; }).slice(0,2).map(function(c){ return c.label.toLowerCase(); });
+  var body = gaps.length
+    ? 'Your biggest opportunities are <b>' + gaps.join('</b> and <b>') + '</b>. A Ready State on-site assessment pinpoints exactly what to fix, what it costs, and in what order — so your robot works on day one.'
+    : 'You’re in strong shape. A short on-site assessment confirms the details and gets you a clean bill of robot-readiness.';
+  el('nsBody').innerHTML = body;
+  el('nsHead').textContent = r.overall >= 70 ? 'You’re close — let’s lock it in.' : 'Let’s close the gaps.';
+
+  buildMailto(r, gaps);
+  el('leadName').addEventListener('input', function(){ buildMailto(r, gaps); });
+  el('leadEmail').addEventListener('input', function(){ buildMailto(r, gaps); });
+}
+
+function buildMailto(r, gaps){
+  var name = el('leadName').value || '';
+  var email = el('leadEmail').value || '';
+  var pt = PROFILE[0].opts[profileAns['ptype']] || '';
+  var tl = PROFILE[1].opts[profileAns['timeline']] || '';
+  var lines = [];
+  lines.push('I took the Robot-Readiness Assessment and would like an on-site assessment.');
+  lines.push('');
+  lines.push('Name: ' + name);
+  lines.push('Email: ' + email);
+  lines.push('Property type: ' + pt);
+  lines.push('Timeline: ' + tl);
+  lines.push('');
+  lines.push('Overall readiness: ' + r.overall + '/100 (' + r.tier.label + ')');
+  r.cats.forEach(function(c){ lines.push('  - ' + c.label + ': ' + c.pct + '%'); });
+  if(gaps.length){ lines.push(''); lines.push('Focus areas: ' + gaps.join(', ')); }
+  var subject = 'On-site assessment request — ' + (name || 'Ready State') + ' (' + r.overall + '/100)';
+  el('bookBtn').setAttribute('href', 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n')));
+}
+
+el('printBtn').addEventListener('click', function(){ window.print(); });
+el('retakeBtn').addEventListener('click', function(){
+  profileAns = {}; answers = []; idx = 0;
+  el('results').classList.add('hidden');
+  el('intro').classList.remove('hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>
+</body>
+</html>
