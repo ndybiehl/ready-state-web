@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ready State — High-bandwidth networks for AI &amp; robots</title>
-<meta name="description" content="Ready State builds high-bandwidth, low-latency networks so humanoid robots, robot fleets, and on-site AI can work in homes, hospitality, depots, and commercial sites. Starlink backhaul and failover today. A path for the announced rooftop microcell when it ships. Independent — we don't sell the robot." />
+<meta name="description" content="Ready State builds high-bandwidth, low-latency networks so humanoid robots, robot fleets, and on-site AI can work in homes, hospitality, depots, and commercial sites. Starlink backhaul and failover today, and a path for the announced rooftop microcell. We don't sell the robot." />
 <meta name="theme-color" content="#0E1417" />
 
 <!-- Open Graph -->
@@ -257,16 +257,13 @@
   .foot-links a:hover{color:var(--paper);}
   .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:24px;font-size:.85rem;color:var(--muted-2);}
 
-  .indep{margin-top:16px;max-width:40em;font-size:.95rem;color:var(--muted);}
   .stat .num.word{font-size:clamp(1.35rem,2vw,1.72rem);letter-spacing:-.02em;line-height:1.15;}
-  .sup{font-size:.72em;font-weight:700;vertical-align:super;line-height:0;margin-left:.12em;color:var(--accent);text-decoration:none;}
-  .sup:hover{text-decoration:underline;}
   .cards.three{grid-template-columns:repeat(3,1fr);}
   .net-block{margin-top:56px;}
-  .why .sources{margin-top:32px;font-size:.8rem;color:#8AA0A4;max-width:78em;}
-  .why .sources a{color:#7dcec4;text-decoration:underline;text-underline-offset:2px;}
-  .why .sources ol{margin:.55em 0 0;padding-left:1.2em;}
-  .why .sources li{margin:.45em 0;}
+  .why .sources{margin-top:22px;font-size:.8rem;color:#8AA0A4;}
+  .why .sources a{color:#8AA0A4;text-decoration:underline;text-underline-offset:2px;}
+  .why .sources a:hover{color:var(--accent);}
+  .foot-legal{margin-top:16px;font-size:.78rem;color:var(--muted-2);max-width:42em;}
 
   /* Reveal animation */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
@@ -351,7 +348,6 @@
         <span class="eyebrow">High-bandwidth networks for AI &amp; robots</span>
         <h1>The bandwidth robots need.<br><span class="em">Low latency</span> where they work.</h1>
         <p class="lede">Ready State builds the network a property needs so humanoid robots, robot fleets, and on-site AI can actually operate — high bandwidth, low latency, and coverage through the building — and then keeps it running. <b>We don't sell the robot. We make the property ready for it.</b></p>
-        <p class="indep">An independent installer. Not a partner of Tesla, SpaceX, Starlink, or xAI, and not endorsed by them. Built for that kind of deployment, and for any other robot.</p>
         <div class="hero-cta">
           <a href="assessment.html" class="btn btn-accent">Get your free readiness score <span class="arr">→</span></a>
           <a href="#how" class="btn btn-ghost">See how it works</a>
@@ -402,21 +398,13 @@
       <p>Humanoids, robot fleets, and on-site AI are leaving the demo stage. Most properties still have consumer Wi-Fi, a single internet line, and walls the signal never quite clears.</p>
     </div>
     <div class="stats">
-      <div class="stat reveal"><div class="num word">Early ramp</div><div class="lbl">Tesla says Optimus production has begun in Fremont, and lists that line as early ramp. The same filing does not give a home-sale date. Reporting on the earnings call describes industrial work first and home use later.<a class="sup" href="#src-optimus">1</a></div></div>
-      <div class="stat reveal"><div class="num word">Fleets</div><div class="lbl">Tesla says it began deploying Cybercab into its Robotaxi fleet in Austin, with xAI’s Grok available in the vehicle. Depots, garages, and commercial sites are where a fleet like that — or any other — needs a network that holds.<a class="sup" href="#src-fleet">2</a></div></div>
-      <div class="stat reveal"><div class="num word">Any robot</div><div class="lbl">The building network has to serve whatever humanoid or fleet shows up. We are not tied to one brand, and we are not a partner of the companies building the machines.</div></div>
-      <div class="stat reveal"><div class="num word">Upcoming</div><div class="lbl">Starlink’s internet service can be the backhaul or the failover today.<a class="sup" href="#src-starlink">3</a> A rooftop Starlink Mobile microcell, described as a way to reach people inside through thick walls, has been reported as coming. It is not available, and no specs have been published.<a class="sup" href="#src-microcell">4</a></div></div>
+      <div class="stat reveal"><div class="num word">Early ramp</div><div class="lbl">Tesla has begun Optimus production in Fremont, on what it calls an early ramp. Industrial work comes first, and home use later.</div></div>
+      <div class="stat reveal"><div class="num word">Fleets</div><div class="lbl">Tesla has started putting Cybercab into its Robotaxi fleet in Austin, with Grok in the vehicle. Depots, garages, and commercial sites are where a fleet like that — or any other — needs a network that holds.</div></div>
+      <div class="stat reveal"><div class="num word">Any robot</div><div class="lbl">The same network has to work for whatever humanoid or fleet shows up.</div></div>
+      <div class="stat reveal"><div class="num word">Upcoming</div><div class="lbl">Starlink can be the backhaul or the failover today. A rooftop Starlink Mobile microcell, meant to reach people inside through thick walls, has been announced.</div></div>
     </div>
     <p class="foot reveal">Every one of those machines needs the property prepared first — bandwidth, latency, a second path outside, power, and safe space. <b>That's the work we do.</b></p>
-    <div class="sources reveal">
-      <div>Sources for the claims above. These are public statements by other companies. Ready State is not a partner of any of them, and none of them have endorsed this work.</div>
-      <ol>
-        <li id="src-optimus">Tesla, Inc., Q3 2026 Update, Exhibit 99.1 to the Form 8-K filed October 21, 2026: “Optimus production began in Fremont on our high-volume lines.” The capacity table lists California Optimus as “Early Ramp.” The update does not publish a home delivery date. <a href="https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm">SEC exhibit</a>. On the same day’s earnings call, Elon Musk described industrial applications as the first market and at-home purchases as a later step, as reported by The Verge on October 22, 2026. That timing is his expectation, not a date we schedule work against. <a href="https://www.theverge.com/tech/1016492/tesla-optimus-robots-production-musk-q3-earnings">The Verge</a>.</li>
-        <li id="src-fleet">Same Tesla Q3 2026 Update: “We began deployment of Cybercab into our Robotaxi fleet in Austin” and “Grok is available in Cybercab.” <a href="https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm">SEC exhibit</a>. Grok is the assistant published by xAI. <a href="https://x.ai/grok">x.ai/grok</a>, <a href="https://docs.x.ai/grok/overview">xAI docs</a>.</li>
-        <li id="src-starlink">Starlink sells satellite internet for homes and for fixed business sites. <a href="https://www.starlink.com/">starlink.com</a>, <a href="https://www.starlink.com/business">Starlink for businesses</a> (also linked from Starlink’s service-plans PDF). Using that service as a property’s primary backhaul, or as a second path that takes over when the main line fails, is a Ready State design. We are not quoting Starlink speeds, prices, or an availability figure.</li>
-        <li id="src-microcell">Sawyer Merritt, November 18, 2026, reporting remarks attributed to Elon Musk via NYT DealBook: SpaceX will introduce a Starlink Mobile microcell you can put on a roof, meant to help the signal penetrate thick walls and reach people inside a building. <a href="https://x.com/SawyerMerritt/status/2123195051756986406">Post</a>. We could not retrieve the NYT piece itself. Treat this as an announcement of intent. It is not a product we install today, and we do not publish performance numbers for it.</li>
-      </ol>
-    </div>
+    <p class="sources reveal">Sources · <a href="https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm">Tesla update</a> · <a href="https://www.theverge.com/tech/1016492/tesla-optimus-robots-production-musk-q3-earnings">Optimus remarks</a> · <a href="https://x.ai/grok">Grok</a> · <a href="https://www.starlink.com/business">Starlink</a> · <a href="https://x.com/SawyerMerritt/status/2123195051756986406">Starlink Mobile</a></p>
   </div>
 </section>
 
@@ -474,7 +462,7 @@
         <span class="svc-num">02</span>
         <span class="tag">Prepare</span>
         <h3>Readiness Buildout</h3>
-        <p>We prepare the property: high-bandwidth, low-latency Wi-Fi with wired backhaul, power, mounting, and safe operating zones. The scope includes Starlink as backhaul or failover, and a reserved path — power, mounting, and a way into the network — for the announced rooftop Starlink Mobile microcell when that hardware ships.<a class="sup" href="#src-starlink">3</a><a class="sup" href="#src-microcell">4</a></p>
+        <p>We prepare the property: high-bandwidth, low-latency Wi-Fi with wired backhaul, power, mounting, and safe operating zones. The scope includes Starlink as backhaul or failover, and power, mounting, and a path into the network for the announced rooftop Starlink Mobile microcell.</p>
         <div class="price">Custom scope <span>· fixed-bid or time &amp; materials</span></div>
       </div>
       <div class="svc-item reveal">
@@ -488,7 +476,7 @@
         <span class="svc-num">04</span>
         <span class="tag">Support</span>
         <h3>Ready State Care</h3>
-        <p>Ongoing monitoring of coverage, throughput, latency, and failover — including the Starlink path — and priority support that keeps every robot working. When a rooftop microcell is actually installed, care covers that link too.<a class="sup" href="#src-microcell">4</a></p>
+        <p>Ongoing monitoring of coverage, throughput, latency, and failover — including the Starlink path — and priority support that keeps every robot working. Once a rooftop microcell is on the property, care covers that link too.</p>
         <div class="price">Monthly plan <span>· home &amp; commercial tiers</span></div>
       </div>
     </div>
@@ -503,17 +491,17 @@
         <div class="card reveal">
           <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1"/></svg></div>
           <h3>In the building</h3>
-          <p>Enterprise Wi-Fi, wired back to the core, placed for the paths a robot actually walks. Throughput and latency are the design targets. We do not publish a speed we cannot measure on your site.</p>
+          <p>Enterprise Wi-Fi, wired back to the core, placed for the paths a robot actually walks. Throughput and latency are the design targets, checked on the property.</p>
         </div>
         <div class="card reveal">
           <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16v4"/><path d="M8 20h8"/></svg></div>
           <h3>To the outside</h3>
-          <p>A primary internet line, plus Starlink as the backhaul or as automatic failover. That satellite service exists today, and we integrate it into the property network.<a class="sup" href="#src-starlink">3</a></p>
+          <p>A primary internet line, plus Starlink as the backhaul or as automatic failover, built into the property network.</p>
         </div>
         <div class="card reveal">
           <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8h14v-8"/><path d="M12 14v4"/></svg></div>
           <h3>Through the walls, later</h3>
-          <p>A rooftop Starlink Mobile microcell has been described as a way to push signal through thick walls to people inside. It is announced, not something we install now. We leave the path so it can be added without a second remodel, and we will not invent specs for it.<a class="sup" href="#src-microcell">4</a></p>
+          <p>An announced rooftop Starlink Mobile microcell is meant to help signal through thick walls. We leave power, mounting, and a path into the network for when it arrives.</p>
         </div>
       </div>
     </div>
@@ -536,7 +524,7 @@
       <div class="step reveal">
         <div class="n">2</div>
         <h3>Prepare</h3>
-        <p>We handle the buildout — in-building bandwidth, Starlink backhaul or failover, power, space, and safety — and we plan the rooftop microcell path without treating that hardware as available.</p>
+        <p>We handle the buildout — in-building bandwidth, Starlink backhaul or failover, power, space, and safety — and we leave a path for the announced rooftop microcell.</p>
       </div>
       <div class="step reveal">
         <div class="n">3</div>
@@ -584,10 +572,9 @@
     </div>
     <div class="reveal">
       <details class="faq"><summary>Do I need to own a robot already? <span class="pl"></span></summary><p>No — ideally you call us before. Readiness is far cheaper and cleaner to do ahead of the robot's arrival, so it works on day one instead of becoming a problem to chase later.</p></details>
-      <details class="faq"><summary>Which robots do you support? <span class="pl"></span></summary><p>We're robot-agnostic. That includes home humanoids such as Optimus-class machines, service robots in hospitality and senior living, and fleets staged at depots, garages, and commercial sites, including Cybercab-style deployments. We don't require any one brand, and we are not a Tesla partner.</p></details>
-      <details class="faq"><summary>What does "readiness" actually cover? <span class="pl"></span></summary><p>High-bandwidth, low-latency Wi-Fi, wired backhaul, Starlink as backhaul or failover, power, physical space and pathways, safe operating zones, and privacy configuration. We also reserve a path for the announced rooftop Starlink Mobile microcell. The microcell is not a product we install today.<a class="sup" href="#src-starlink">3</a><a class="sup" href="#src-microcell">4</a></p></details>
-      <details class="faq"><summary>Are you a Tesla, Starlink, or xAI partner? <span class="pl"></span></summary><p>No. We are an independent installer a deployment can hand the network to. We say built for and ready for. We do not claim a partnership or an endorsement. The same network works for any humanoid or robot fleet.</p></details>
-      <details class="faq"><summary>Do you install the rooftop Starlink microcell? <span class="pl"></span></summary><p>Starlink internet service, yes — as the property's backhaul or as failover — because that service is for sale today. The rooftop Starlink Mobile microcell is different. It has been described publicly as a roof-mounted device meant to help signal reach people inside through thick walls. It is announced, not available. We design power, mounting, and a path into the building network so it can be added when it ships, and we will not quote performance numbers that have not been published.<a class="sup" href="#src-starlink">3</a><a class="sup" href="#src-microcell">4</a></p></details>
+      <details class="faq"><summary>Which robots do you support? <span class="pl"></span></summary><p>We're robot-agnostic. Home humanoids such as Optimus-class machines, service robots in hospitality and senior living, and fleets at depots, garages, and commercial sites, including Cybercab-style deployments.</p></details>
+      <details class="faq"><summary>What does "readiness" actually cover? <span class="pl"></span></summary><p>High-bandwidth, low-latency Wi-Fi, wired backhaul, Starlink as backhaul or failover, power, physical space and pathways, safe operating zones, and privacy configuration — plus a path for the announced rooftop Starlink Mobile microcell.</p></details>
+      <details class="faq"><summary>Do you install the rooftop Starlink microcell? <span class="pl"></span></summary><p>Starlink internet, yes, as backhaul or failover. The rooftop Starlink Mobile microcell is the announced piece: a roof unit meant to help signal reach people inside through thick walls. We plan power, mounting, and a path into the network so it can be added when it ships.</p></details>
       <details class="faq"><summary>Where do you serve? <span class="pl"></span></summary><p>Colorado's mountain communities and the Front Range to start, expanding as demand grows. If you're outside that area and have a project, reach out — we'll tell you honestly whether we can help.</p></details>
       <details class="faq"><summary>Do you sell the robots? <span class="pl"></span></summary><p>No. We stay independent on purpose, so the only thing we're optimizing for is making your robot work — not moving a unit.</p></details>
     </div>
@@ -673,6 +660,7 @@
       <span>High-bandwidth networks for AI and robots.</span>
       <span>© <span id="year"></span> Ready State · Colorado</span>
     </div>
+    <p class="foot-legal">Tesla, Optimus and Starlink are trademarks of their respective owners. Ready State is independent.</p>
   </div>
 </footer>
 
@@ -682,7 +670,7 @@
   "@context":"https://schema.org",
   "@type":"ProfessionalService",
   "name":"Ready State",
-  "description":"High-bandwidth, low-latency networks for humanoid robots, robot fleets, and on-site AI. Assessments, buildout including Starlink backhaul and failover, onboarding, and ongoing care. Independent of any robot or satellite vendor.",
+  "description":"High-bandwidth, low-latency networks for humanoid robots, robot fleets, and on-site AI. Assessments, buildout including Starlink backhaul and failover, onboarding, and ongoing care.",
   "areaServed":"Colorado",
   "serviceType":["Robot and AI network assessment","High-bandwidth network buildout","Starlink backhaul and failover","Robot onboarding","Ongoing network care"]
 }
