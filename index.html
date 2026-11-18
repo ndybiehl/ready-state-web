@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ready State — Robot-Readiness for Homes &amp; Hospitality</title>
-<meta name="description" content="Ready State prepares the power, connectivity, space, and safety your property needs so service and humanoid robots actually work. Assessments, buildout, onboarding, and ongoing support for luxury homes, hospitality, and senior living." />
+<title>Ready State — High-bandwidth networks for AI &amp; robots</title>
+<meta name="description" content="Ready State builds high-bandwidth, low-latency networks so humanoid robots, robot fleets, and on-site AI can work in homes, hospitality, depots, and commercial sites. Starlink backhaul and failover today. A path for the announced rooftop microcell when it ships. Independent — we don't sell the robot." />
 <meta name="theme-color" content="#0E1417" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Ready State — Robot-Readiness for Homes &amp; Hospitality" />
-<meta property="og:description" content="We don't sell the robot. We make sure your building is ready for it — power, connectivity, space, and safety, done to a standard robots depend on." />
+<meta property="og:title" content="Ready State — High-bandwidth networks for AI &amp; robots" />
+<meta property="og:description" content="High-bandwidth, low-latency networks built so humanoid robots, robot fleets, and on-site AI can actually work. We don't sell the robot. We make the property ready for it." />
 <!-- TODO: set og:url + og:image once the domain and a social image exist -->
 
 <!-- Favicon (inline SVG mark) -->
@@ -112,7 +112,7 @@
             mask-image:radial-gradient(78% 56% at 74% 6%, #000, transparent 74%);}
   .hero-inner{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;}
   .hero h1{font-size:clamp(2.5rem,5.2vw,4rem);margin:.5em 0 .46em;}
-  .hero h1 .em{font-style:italic;font-weight:400;color:var(--accent-deep);}
+  .hero h1 .em{font-style:italic;font-weight:400;color:var(--accent-deep);padding-right:.28em;}
   .hero .lede{font-size:1.16rem;color:var(--muted);max-width:32em;}
   .hero .lede b{color:var(--ink);font-weight:600;}
   .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
@@ -257,6 +257,17 @@
   .foot-links a:hover{color:var(--paper);}
   .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:24px;font-size:.85rem;color:var(--muted-2);}
 
+  .indep{margin-top:16px;max-width:40em;font-size:.95rem;color:var(--muted);}
+  .stat .num.word{font-size:clamp(1.35rem,2vw,1.72rem);letter-spacing:-.02em;line-height:1.15;}
+  .sup{font-size:.72em;font-weight:700;vertical-align:super;line-height:0;margin-left:.12em;color:var(--accent);text-decoration:none;}
+  .sup:hover{text-decoration:underline;}
+  .cards.three{grid-template-columns:repeat(3,1fr);}
+  .net-block{margin-top:56px;}
+  .why .sources{margin-top:32px;font-size:.8rem;color:#8AA0A4;max-width:78em;}
+  .why .sources a{color:#7dcec4;text-decoration:underline;text-underline-offset:2px;}
+  .why .sources ol{margin:.55em 0 0;padding-left:1.2em;}
+  .why .sources li{margin:.45em 0;}
+
   /* Reveal animation */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
   .reveal.in{opacity:1;transform:none;}
@@ -272,6 +283,7 @@
     .step::before{display:none;}
     .about-grid{grid-template-columns:1fr;gap:32px;}
     .contact-grid{grid-template-columns:1fr;gap:32px;}
+    .cards.three{grid-template-columns:1fr;}
   }
   @media (max-width:680px){
     .nav-links{
@@ -283,6 +295,11 @@
     .nav.open .nav-links{max-height:340px;padding-top:8px;}
     .menu-btn{display:block;}
     .nav-cta .btn-ghost{display:none;}
+    .brand{white-space:nowrap;order:1;}
+    .nav{flex-wrap:wrap;row-gap:10px;}
+    .menu-btn{order:2;margin-left:auto;}
+    .nav-cta{order:3;flex:1 0 100%;}
+    .nav-cta .btn-accent{width:100%;}
     .stats{grid-template-columns:1fr;}
     .cards{grid-template-columns:1fr;}
     section{padding:64px 0;}
@@ -317,10 +334,10 @@
       <div class="nav-cta">
         <a href="#faq" class="btn btn-ghost">FAQ</a>
         <a href="assessment.html" class="btn btn-accent">Free readiness score</a>
-        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
       </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </div>
 </header>
@@ -331,9 +348,10 @@
   <div class="wrap">
     <div class="hero-inner">
       <div class="hero-copy reveal">
-        <span class="eyebrow">Robot-readiness for homes &amp; hospitality</span>
-        <h1>The robots are arriving.<br>Most buildings <span class="em">aren't ready</span> for them.</h1>
-        <p class="lede">Ready State prepares the power, connectivity, space, and safety a property needs so service and humanoid robots actually work — and keeps them running. <b>We don't sell the robot. We make sure your building is ready for it.</b></p>
+        <span class="eyebrow">High-bandwidth networks for AI &amp; robots</span>
+        <h1>The bandwidth robots need.<br><span class="em">Low latency</span> where they work.</h1>
+        <p class="lede">Ready State builds the network a property needs so humanoid robots, robot fleets, and on-site AI can actually operate — high bandwidth, low latency, and coverage through the building — and then keeps it running. <b>We don't sell the robot. We make the property ready for it.</b></p>
+        <p class="indep">An independent installer. Not a partner of Tesla, SpaceX, Starlink, or xAI, and not endorsed by them. Built for that kind of deployment, and for any other robot.</p>
         <div class="hero-cta">
           <a href="assessment.html" class="btn btn-accent">Get your free readiness score <span class="arr">→</span></a>
           <a href="#how" class="btn btn-ghost">See how it works</a>
@@ -343,8 +361,8 @@
       <div class="hero-card reveal">
         <div class="rc">
           <div class="rc-head">
-            <div class="rc-title"><span class="rc-dot"></span> Readiness Report</div>
-            <div class="rc-pill">Robot-Ready</div>
+            <div class="rc-title"><span class="rc-dot"></span> Network snapshot</div>
+            <div class="rc-pill">Sample</div>
           </div>
           <div class="rc-score">
             <div class="rc-gauge">
@@ -355,20 +373,20 @@
               <div class="g-num">92</div>
             </div>
             <div class="rc-score-meta">
-              <div class="rc-big">Sample property</div>
-              <div class="rc-small">Scored in about two minutes across connectivity, power, space &amp; safety.</div>
+              <div class="rc-big">Illustrative property</div>
+              <div class="rc-small">A sample layout, not a measured result. Throughput, latency, coverage, and failover.</div>
             </div>
           </div>
           <div class="rc-bars">
-            <div class="rc-bar"><div class="rc-bar-top"><span class="l">Wi-Fi coverage</span><span class="v">96%</span></div><div class="rc-track"><span style="width:96%"></span></div></div>
-            <div class="rc-bar"><div class="rc-bar-top"><span class="l">Network backbone</span><span class="v">88%</span></div><div class="rc-track"><span style="width:88%"></span></div></div>
-            <div class="rc-bar"><div class="rc-bar-top"><span class="l">Power</span><span class="v">90%</span></div><div class="rc-track"><span style="width:90%"></span></div></div>
-            <div class="rc-bar"><div class="rc-bar-top"><span class="l">Space &amp; safety</span><span class="v">84%</span></div><div class="rc-track"><span style="width:84%"></span></div></div>
+            <div class="rc-bar"><div class="rc-bar-top"><span class="l">Throughput</span><span class="v">96%</span></div><div class="rc-track"><span style="width:96%"></span></div></div>
+            <div class="rc-bar"><div class="rc-bar-top"><span class="l">Latency</span><span class="v">88%</span></div><div class="rc-track"><span style="width:88%"></span></div></div>
+            <div class="rc-bar"><div class="rc-bar-top"><span class="l">In-building coverage</span><span class="v">90%</span></div><div class="rc-track"><span style="width:90%"></span></div></div>
+            <div class="rc-bar"><div class="rc-bar-top"><span class="l">Backhaul &amp; failover</span><span class="v">84%</span></div><div class="rc-track"><span style="width:84%"></span></div></div>
           </div>
         </div>
         <div class="rc-float">
           <span class="rc-fic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1"/></svg></span>
-          <span class="rc-ftext"><b>Even Wi-Fi coverage</b><span>No dead zones detected</span></span>
+          <span class="rc-ftext"><b>Bandwidth in the room</b><span>Sample only — not a live reading</span></span>
         </div>
       </div>
     </div>
@@ -380,16 +398,25 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Why now</span>
-      <h2>This isn't speculative anymore.</h2>
-      <p>The first wave of home and service robots is already shipping. The thing that decides whether they work isn't the robot — it's the building they're dropped into.</p>
+      <h2>A robot is only as good as the network in the room.</h2>
+      <p>Humanoids, robot fleets, and on-site AI are leaving the demo stage. Most properties still have consumer Wi-Fi, a single internet line, and walls the signal never quite clears.</p>
     </div>
     <div class="stats">
-      <div class="stat reveal"><div class="num">2026</div><div class="lbl">First home humanoids (1X NEO, $20K) shipping to U.S. homes this year.</div></div>
-      <div class="stat reveal"><div class="num">43</div><div class="lbl">U.S. states where service robots already run in hotels and senior-living communities.</div></div>
-      <div class="stat reveal"><div class="num">70%</div><div class="lbl">Of senior-care technology failures trace back to poor Wi-Fi and connectivity.</div></div>
-      <div class="stat reveal"><div class="num">$1B</div><div class="lbl">Infrastructure-upgrade wave already underway to fix exactly that.</div></div>
+      <div class="stat reveal"><div class="num word">Early ramp</div><div class="lbl">Tesla says Optimus production has begun in Fremont, and lists that line as early ramp. The same filing does not give a home-sale date. Reporting on the earnings call describes industrial work first and home use later.<a class="sup" href="#src-optimus">1</a></div></div>
+      <div class="stat reveal"><div class="num word">Fleets</div><div class="lbl">Tesla says it began deploying Cybercab into its Robotaxi fleet in Austin, with xAI’s Grok available in the vehicle. Depots, garages, and commercial sites are where a fleet like that — or any other — needs a network that holds.<a class="sup" href="#src-fleet">2</a></div></div>
+      <div class="stat reveal"><div class="num word">Any robot</div><div class="lbl">The building network has to serve whatever humanoid or fleet shows up. We are not tied to one brand, and we are not a partner of the companies building the machines.</div></div>
+      <div class="stat reveal"><div class="num word">Upcoming</div><div class="lbl">Starlink’s internet service can be the backhaul or the failover today.<a class="sup" href="#src-starlink">3</a> A rooftop Starlink Mobile microcell, described as a way to reach people inside through thick walls, has been reported as coming. It is not available, and no specs have been published.<a class="sup" href="#src-microcell">4</a></div></div>
     </div>
-    <p class="foot reveal">Every one of those robots needs the building prepared first — reliable power, networks, coverage, and safe space. <b>That's the work we do.</b></p>
+    <p class="foot reveal">Every one of those machines needs the property prepared first — bandwidth, latency, a second path outside, power, and safe space. <b>That's the work we do.</b></p>
+    <div class="sources reveal">
+      <div>Sources for the claims above. These are public statements by other companies. Ready State is not a partner of any of them, and none of them have endorsed this work.</div>
+      <ol>
+        <li id="src-optimus">Tesla, Inc., Q3 2026 Update, Exhibit 99.1 to the Form 8-K filed October 21, 2026: “Optimus production began in Fremont on our high-volume lines.” The capacity table lists California Optimus as “Early Ramp.” The update does not publish a home delivery date. <a href="https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm">SEC exhibit</a>. On the same day’s earnings call, Elon Musk described industrial applications as the first market and at-home purchases as a later step, as reported by The Verge on October 22, 2026. That timing is his expectation, not a date we schedule work against. <a href="https://www.theverge.com/tech/1016492/tesla-optimus-robots-production-musk-q3-earnings">The Verge</a>.</li>
+        <li id="src-fleet">Same Tesla Q3 2026 Update: “We began deployment of Cybercab into our Robotaxi fleet in Austin” and “Grok is available in Cybercab.” <a href="https://www.sec.gov/Archives/edgar/data/1318605/000162828026066738/exhibit9914.htm">SEC exhibit</a>. Grok is the assistant published by xAI. <a href="https://x.ai/grok">x.ai/grok</a>, <a href="https://docs.x.ai/grok/overview">xAI docs</a>.</li>
+        <li id="src-starlink">Starlink sells satellite internet for homes and for fixed business sites. <a href="https://www.starlink.com/">starlink.com</a>, <a href="https://www.starlink.com/business">Starlink for businesses</a> (also linked from Starlink’s service-plans PDF). Using that service as a property’s primary backhaul, or as a second path that takes over when the main line fails, is a Ready State design. We are not quoting Starlink speeds, prices, or an availability figure.</li>
+        <li id="src-microcell">Sawyer Merritt, November 18, 2026, reporting remarks attributed to Elon Musk via NYT DealBook: SpaceX will introduce a Starlink Mobile microcell you can put on a roof, meant to help the signal penetrate thick walls and reach people inside a building. <a href="https://x.com/SawyerMerritt/status/2123195051756986406">Post</a>. We could not retrieve the NYT piece itself. Treat this as an announcement of intent. It is not a product we install today, and we do not publish performance numbers for it.</li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -398,29 +425,29 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Who it's for</span>
-      <h2>Built for properties where reliability isn't optional.</h2>
-      <p>High expectations, real budgets, and no tolerance for technology that doesn't just work.</p>
+      <h2>Built for properties where the network cannot be the weak link.</h2>
+      <p>Homes, guest properties, and the depots and commercial sites where a robot fleet actually lives. High expectations, and no tolerance for a link that drops when the machine moves.</p>
     </div>
     <div class="cards">
       <div class="card reveal">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
-        <h3>Luxury &amp; mountain homes</h3>
-        <p>Early adopters bringing the first home robots into high-end, often-empty houses that demand flawless connectivity.</p>
+        <h3>Homes</h3>
+        <p>Humanoid robots at home — Optimus-class machines and any other brand — need bandwidth in every room they enter, not just beside the router.</p>
       </div>
       <div class="card reveal">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v0M9 13v0M9 17v0"/></svg></div>
         <h3>Hospitality, lodges &amp; clubs</h3>
-        <p>Properties adding delivery, cleaning, and concierge robots without disrupting the guest experience.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.3-7-10a7 7 0 0114 0c0 5.7-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
-        <h3>Senior &amp; assisted living</h3>
-        <p>Communities deploying service and companion robots that simply fail without rock-solid, well-designed networks.</p>
+        <p>Delivery, cleaning, and concierge robots on top of guest Wi-Fi. The guest network and the robot network both have to hold.</p>
       </div>
       <div class="card reveal">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 14h3"/></svg></div>
-        <h3>Property managers</h3>
-        <p>Managing high-end portfolios that need one accountable partner for robot infrastructure across every door.</p>
+        <h3>Depots, garages &amp; commercial sites</h3>
+        <p>Where a fleet stages, charges, and checks in. Ready for Cybercab-style sites and any other robot or vehicle fleet a deployment hands to an installer.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.3-7-10a7 7 0 0114 0c0 5.7-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+        <h3>Senior living &amp; managed properties</h3>
+        <p>Communities and portfolios that need one accountable partner. A dropped link here is not a minor inconvenience.</p>
       </div>
     </div>
   </div>
@@ -431,7 +458,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">What we do</span>
-      <h2>Four ways we make a property robot-ready.</h2>
+      <h2>Four ways we make a property ready for robots and on-site AI.</h2>
       <p>Start with an assessment. Most clients move from there into buildout, onboarding, and an ongoing care plan.</p>
     </div>
     <div class="svc">
@@ -439,7 +466,7 @@
         <span class="svc-num">01</span>
         <span class="tag">Assess</span>
         <h3>Readiness Assessment</h3>
-        <p>A full site survey of power, network and Wi-Fi coverage, space, pathways, safety zones, and privacy — delivered as a clear report and remediation plan you own.</p>
+        <p>A full site survey of throughput, latency, Wi-Fi coverage, backhaul and failover, power, space, pathways, safety zones, and privacy — delivered as a clear report and remediation plan you own.</p>
         <div class="price">Homes from $750 <span>· commercial properties quoted</span></div>
         <a href="assessment.html" style="display:inline-block;margin-top:16px;color:var(--accent-deep);font-weight:600;font-size:.92rem;">Or take the free 2-minute self-assessment →</a>
       </div>
@@ -447,7 +474,7 @@
         <span class="svc-num">02</span>
         <span class="tag">Prepare</span>
         <h3>Readiness Buildout</h3>
-        <p>We prepare the property: enterprise-grade Wi-Fi and networking, power, mounting, and safe operating zones — done to a standard robots depend on.</p>
+        <p>We prepare the property: high-bandwidth, low-latency Wi-Fi with wired backhaul, power, mounting, and safe operating zones. The scope includes Starlink as backhaul or failover, and a reserved path — power, mounting, and a way into the network — for the announced rooftop Starlink Mobile microcell when that hardware ships.<a class="sup" href="#src-starlink">3</a><a class="sup" href="#src-microcell">4</a></p>
         <div class="price">Custom scope <span>· fixed-bid or time &amp; materials</span></div>
       </div>
       <div class="svc-item reveal">
@@ -461,8 +488,33 @@
         <span class="svc-num">04</span>
         <span class="tag">Support</span>
         <h3>Ready State Care</h3>
-        <p>Ongoing monitoring, a connectivity service-level guarantee, and priority support that keeps every robot working — month after month.</p>
+        <p>Ongoing monitoring of coverage, throughput, latency, and failover — including the Starlink path — and priority support that keeps every robot working. When a rooftop microcell is actually installed, care covers that link too.<a class="sup" href="#src-microcell">4</a></p>
         <div class="price">Monthly plan <span>· home &amp; commercial tiers</span></div>
+      </div>
+    </div>
+
+    <div class="net-block" id="network">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The link</span>
+        <h2>Three layers. One property network.</h2>
+        <p>Bandwidth inside the building, a second path to the internet, and a plan for the rooftop microcell when it actually ships.</p>
+      </div>
+      <div class="cards three">
+        <div class="card reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 9.5a15 15 0 0 1 20 0"/><circle cx="12" cy="20" r="1"/></svg></div>
+          <h3>In the building</h3>
+          <p>Enterprise Wi-Fi, wired back to the core, placed for the paths a robot actually walks. Throughput and latency are the design targets. We do not publish a speed we cannot measure on your site.</p>
+        </div>
+        <div class="card reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16v4"/><path d="M8 20h8"/></svg></div>
+          <h3>To the outside</h3>
+          <p>A primary internet line, plus Starlink as the backhaul or as automatic failover. That satellite service exists today, and we integrate it into the property network.<a class="sup" href="#src-starlink">3</a></p>
+        </div>
+        <div class="card reveal">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8h14v-8"/><path d="M12 14v4"/></svg></div>
+          <h3>Through the walls, later</h3>
+          <p>A rooftop Starlink Mobile microcell has been described as a way to push signal through thick walls to people inside. It is announced, not something we install now. We leave the path so it can be added without a second remodel, and we will not invent specs for it.<a class="sup" href="#src-microcell">4</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -484,7 +536,7 @@
       <div class="step reveal">
         <div class="n">2</div>
         <h3>Prepare</h3>
-        <p>We handle the buildout — connectivity, power, space, and safety — so the foundation is right before anything rolls in the door.</p>
+        <p>We handle the buildout — in-building bandwidth, Starlink backhaul or failover, power, space, and safety — and we plan the rooftop microcell path without treating that hardware as available.</p>
       </div>
       <div class="step reveal">
         <div class="n">3</div>
@@ -501,18 +553,18 @@
     <div class="about-grid">
       <div class="reveal">
         <span class="eyebrow">Why Ready State</span>
-        <h2>The robots are new. Reliable infrastructure isn't.</h2>
-        <p>Ready State is led by an infrastructure specialist with years of enterprise networking and systems experience — the exact discipline robots live or die on.</p>
-        <p>Robots fail on the boring things: weak Wi-Fi, dead zones, bad power, no plan. <b>We bring proven infrastructure rigor to a brand-new category</b>, with a white-glove approach built for high-end homes and properties.</p>
+        <h2>The robots are new. Reliable bandwidth isn't.</h2>
+        <p>Ready State is led by an infrastructure specialist with years of enterprise networking and systems experience — the discipline high-bandwidth, low-latency networks depend on.</p>
+        <p>Robots and on-site AI fail on the boring things: not enough bandwidth, too much latency, dead zones, a single internet line, bad power, no plan. <b>We bring proven infrastructure rigor to a brand-new category</b>, with a white-glove approach built for homes, hospitality, and commercial sites.</p>
       </div>
       <div class="pillars reveal">
         <div class="pillar">
           <span class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l5 5 9-11"/></svg></span>
-          <div><h4>Robot-agnostic</h4><p>We don't sell hardware, so our only job is making yours work — whatever brand it is.</p></div>
+          <div><h4>Robot-agnostic</h4><p>We don't sell the robot or the vehicle. Optimus-class humanoids, Cybercab-style fleets, or any other brand — the network is the job.</p></div>
         </div>
         <div class="pillar">
           <span class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.7-8 9-4.5-1.3-8-4-8-9V7z"/></svg></span>
-          <div><h4>Infrastructure-first</h4><p>Enterprise-grade networks and power, designed for properties where downtime isn't acceptable.</p></div>
+          <div><h4>Infrastructure-first</h4><p>High bandwidth, low latency, wired backhaul, and a Starlink failover path, designed for properties where downtime isn't acceptable.</p></div>
         </div>
         <div class="pillar">
           <span class="pic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></span>
@@ -532,8 +584,10 @@
     </div>
     <div class="reveal">
       <details class="faq"><summary>Do I need to own a robot already? <span class="pl"></span></summary><p>No — ideally you call us before. Readiness is far cheaper and cleaner to do ahead of the robot's arrival, so it works on day one instead of becoming a problem to chase later.</p></details>
-      <details class="faq"><summary>Which robots do you support? <span class="pl"></span></summary><p>We're robot-agnostic: home humanoids like 1X NEO and Tesla Optimus, plus the delivery, cleaning, and companion robots already common across hospitality and senior living.</p></details>
-      <details class="faq"><summary>What does "readiness" actually cover? <span class="pl"></span></summary><p>Power, network and Wi-Fi coverage, physical space and pathways, safe operating zones, and privacy configuration — everything the building needs so a robot performs reliably.</p></details>
+      <details class="faq"><summary>Which robots do you support? <span class="pl"></span></summary><p>We're robot-agnostic. That includes home humanoids such as Optimus-class machines, service robots in hospitality and senior living, and fleets staged at depots, garages, and commercial sites, including Cybercab-style deployments. We don't require any one brand, and we are not a Tesla partner.</p></details>
+      <details class="faq"><summary>What does "readiness" actually cover? <span class="pl"></span></summary><p>High-bandwidth, low-latency Wi-Fi, wired backhaul, Starlink as backhaul or failover, power, physical space and pathways, safe operating zones, and privacy configuration. We also reserve a path for the announced rooftop Starlink Mobile microcell. The microcell is not a product we install today.<a class="sup" href="#src-starlink">3</a><a class="sup" href="#src-microcell">4</a></p></details>
+      <details class="faq"><summary>Are you a Tesla, Starlink, or xAI partner? <span class="pl"></span></summary><p>No. We are an independent installer a deployment can hand the network to. We say built for and ready for. We do not claim a partnership or an endorsement. The same network works for any humanoid or robot fleet.</p></details>
+      <details class="faq"><summary>Do you install the rooftop Starlink microcell? <span class="pl"></span></summary><p>Starlink internet service, yes — as the property's backhaul or as failover — because that service is for sale today. The rooftop Starlink Mobile microcell is different. It has been described publicly as a roof-mounted device meant to help signal reach people inside through thick walls. It is announced, not available. We design power, mounting, and a path into the building network so it can be added when it ships, and we will not quote performance numbers that have not been published.<a class="sup" href="#src-starlink">3</a><a class="sup" href="#src-microcell">4</a></p></details>
       <details class="faq"><summary>Where do you serve? <span class="pl"></span></summary><p>Colorado's mountain communities and the Front Range to start, expanding as demand grows. If you're outside that area and have a project, reach out — we'll tell you honestly whether we can help.</p></details>
       <details class="faq"><summary>Do you sell the robots? <span class="pl"></span></summary><p>No. We stay independent on purpose, so the only thing we're optimizing for is making your robot work — not moving a unit.</p></details>
     </div>
@@ -547,16 +601,16 @@
       <div class="reveal">
         <span class="eyebrow">Get started</span>
         <h2>Request a readiness assessment.</h2>
-        <p class="sub">Tell us about the property and what you're planning. We'll follow up to scope an assessment.</p>
+        <p class="sub">Tell us about the property and what you're planning. Contact us by email — there is no phone number on this site. We'll follow up to scope an assessment.</p>
 
-        <!-- TODO(Randy): replace with your real Ready State email + phone once set up -->
+        <!-- TODO(Randy): replace hello@readystate.co with your real Ready State email once set up. Do not add a placeholder phone number. -->
         <a class="contact-line" href="mailto:hello@readystate.co">
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
           <span><span class="k">Email</span><br><span class="v">hello@readystate.co</span></span>
         </a>
-        <a class="contact-line" href="tel:+10000000000">
-          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg></span>
-          <span><span class="k">Phone</span><br><span class="v">(000) 000-0000</span></span>
+        <a class="contact-line" href="mailto:hello@readystate.co">
+          <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+          <span><span class="k">Reach us</span><br><span class="v">Contact us by email</span></span>
         </a>
         <a class="contact-line" href="#top">
           <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.3-7-10a7 7 0 0114 0c0 5.7-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></span>
@@ -578,6 +632,7 @@
           <select id="ptype" name="ptype">
             <option>Luxury / mountain home</option>
             <option>Hospitality, lodge or club</option>
+            <option>Depot, garage, or commercial site</option>
             <option>Senior or assisted living</option>
             <option>Property management portfolio</option>
             <option>Other</option>
@@ -585,7 +640,7 @@
         </div>
         <div class="field">
           <label for="msg">What are you planning?</label>
-          <textarea id="msg" name="msg" placeholder="A few words about the property and any robots you're considering."></textarea>
+          <textarea id="msg" name="msg" placeholder="A few words about the property, the robots or fleet, and the bandwidth you need."></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send request <span class="arr">→</span></button>
         <p class="form-note">Opens in your email app — no account or sign-up required.</p>
@@ -610,11 +665,12 @@
         <a href="#who">Who it's for</a>
         <a href="#services">Services</a>
         <a href="#how">How it works</a>
+        <a href="#network">Network</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>Robot-readiness for homes &amp; hospitality.</span>
+      <span>High-bandwidth networks for AI and robots.</span>
       <span>© <span id="year"></span> Ready State · Colorado</span>
     </div>
   </div>
@@ -626,9 +682,9 @@
   "@context":"https://schema.org",
   "@type":"ProfessionalService",
   "name":"Ready State",
-  "description":"Robot-readiness for homes and hospitality: assessments, infrastructure buildout, onboarding, and ongoing support so service and humanoid robots work reliably.",
+  "description":"High-bandwidth, low-latency networks for humanoid robots, robot fleets, and on-site AI. Assessments, buildout including Starlink backhaul and failover, onboarding, and ongoing care. Independent of any robot or satellite vendor.",
   "areaServed":"Colorado",
-  "serviceType":["Robot-readiness assessment","Network & connectivity buildout","Robot onboarding","Ongoing support"]
+  "serviceType":["Robot and AI network assessment","High-bandwidth network buildout","Starlink backhaul and failover","Robot onboarding","Ongoing network care"]
 }
 </script>
 

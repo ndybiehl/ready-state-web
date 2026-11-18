@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Robot-Readiness Assessment — Ready State</title>
-<meta name="description" content="Get your property's robot-readiness score in 2 minutes. A free self-assessment of connectivity, power, space, and safety — with tailored next steps." />
+<title>Network Readiness Assessment — Ready State</title>
+<meta name="description" content="Score your property's network for robots and on-site AI in about 2 minutes. Bandwidth, latency, power, space, and safety — with tailored next steps." />
 <meta name="theme-color" content="#0E1417" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Free Robot-Readiness Assessment — Ready State" />
-<meta property="og:description" content="Is your home or property ready for a robot? Get an instant readiness score and a tailored plan." />
+<meta property="og:title" content="Free network readiness assessment — Ready State" />
+<meta property="og:description" content="Is your property's network ready for robots and on-site AI? Get an instant score and a tailored plan." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' rx='7' fill='%230E1417'/%3E%3Cpath d='M10 20.5h2.4v-4.2H10zM14.8 20.5h2.4V13h-2.4zM19.6 20.5H22V9.5h-2.4z' fill='%2310B5A2'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -157,8 +157,8 @@
   <!-- INTRO -->
   <section id="intro" class="intro">
     <span class="eyebrow" style="justify-content:center;">Free · 2 minutes · No sign-up</span>
-    <h1>Is your property <span class="em">robot-ready?</span></h1>
-    <p>Answer a few questions about your home or property and get an instant readiness score — plus exactly where the gaps are and what to do about them.</p>
+    <h1>Is the network <span class="em">ready?</span></h1>
+    <p>Answer a few questions about bandwidth, latency, power, space, and safety. You'll get an instant score for robots and on-site AI — plus where the gaps are.</p>
     <div class="meta">
       <span>✓ <b>Instant</b> score</span>
       <span>✓ <b>6</b> areas checked</span>
@@ -221,12 +221,12 @@
     <div class="retake"><button id="retakeBtn">↻ Retake the assessment</button></div>
   </section>
 
-  <p class="disclaimer">This self-assessment is a general guide, not a substitute for an on-site evaluation. Robot capabilities and requirements vary by model.</p>
+  <p class="disclaimer">This self-assessment is a general guide, not a substitute for an on-site evaluation. Robot capabilities and requirements vary by model. Ready State is independent of any robot, vehicle, or satellite provider.</p>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <span>Ready State — robot-readiness for homes &amp; hospitality.</span>
+    <span>Ready State — high-bandwidth networks for AI and robots.</span>
     <span><a href="index.html">← readystate</a> · © <span id="yr"></span></span>
   </div>
 </footer>
@@ -238,7 +238,7 @@ var CONTACT_EMAIL = 'hello@readystate.co'; // TODO(Randy): your real address
 /* ---------- Profile (not scored) + scored questions ---------- */
 var PROFILE = [
   { id:'ptype', q:'What kind of property is this?', help:'So we tailor the result to your situation.',
-    opts:['Luxury or mountain home','Hospitality, lodge or club','Senior or assisted living','Property-management portfolio'] },
+    opts:['Luxury or mountain home','Hospitality, lodge or club','Depot, garage, or commercial site','Senior or assisted living','Property-management portfolio'] },
   { id:'timeline', q:'When are you bringing in a robot?', help:'No wrong answer — earlier is actually better for readiness.',
     opts:['I already have one','In the next 6 months','Sometime this year','Just exploring'] }
 ];
@@ -247,7 +247,7 @@ var WEIGHTS = { connectivity:26, network:18, power:16, space:18, safety:14, priv
 var CATLABEL = { connectivity:'Wi-Fi coverage', network:'Network backbone', power:'Power', space:'Space & navigation', safety:'Safety & zoning', privacy:'Privacy & data' };
 
 var QUESTIONS = [
-  { cat:'connectivity', q:'How would you describe Wi-Fi coverage across the whole property?', help:'Robots roam — coverage has to be even, not just strong near the router.',
+  { cat:'connectivity', q:'How would you describe Wi-Fi coverage across the whole property?', help:'Robots and on-site AI need even coverage and real bandwidth where they move, not just a strong signal beside the router.',
     opts:[
       {t:'Strong everywhere, including far rooms and outdoors', p:10},
       {t:'Good in the main areas, weak spots elsewhere', p:6, note:'Robots wander into the weak spots. Coverage needs to be even end to end.'},
@@ -268,7 +268,7 @@ var QUESTIONS = [
       {t:'All wireless, or a single device', p:3, note:'Wireless-only backhaul adds the lag and drops robots feel most.'},
       {t:'Don’t know', p:2}
     ]},
-  { cat:'network', q:'How reliable is the internet, and is there a backup?', help:'',
+  { cat:'network', q:'How reliable is the internet, and is there a backup?', help:'A second path, such as Starlink, keeps robots and on-site AI up when the primary line drops.',
     opts:[
       {t:'Business-class with an automatic backup (Starlink/LTE)', p:8},
       {t:'Reliable, but no backup line', p:6, note:'A backup path keeps robots working through outages.'},
