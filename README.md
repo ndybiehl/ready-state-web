@@ -1,6 +1,6 @@
 # Ready State — website
 
-Marketing + lead-gen site for **Ready State**: robot-readiness for homes & hospitality.
+Marketing + lead-gen site for **Ready State**: high-bandwidth, low-latency networks for AI and robots.
 
 Static site — `index.html` plus a client-side **Robot-Readiness Assessment** (`assessment.html`) that scores a visitor's property instantly. No build step, no backend, no dependencies beyond Google Fonts. Hosts free on GitHub Pages.
 
@@ -53,7 +53,7 @@ These are flagged with `TODO` in the code:
 
 - [ ] **Confirm the name + domain.** "Ready State" — check `readystate.co` / `.com` availability before committing the brand.
 - [ ] **Real email.** Replace `hello@readystate.co` in **both** `index.html` and `assessment.html` (search `CONTACT_EMAIL`, plus the contact link in `index.html`).
-- [ ] **Real phone.** Replace `(000) 000-0000` and the `tel:+10000000000` link.
+- [x] **Phone.** The placeholder `(000) 000-0000` was removed. The contact block says to reach Ready State by email. Do not add a phone number until you have a real one.
 - [ ] **About section.** Tighten the bio if you want specifics (years, credentials). Currently kept generic and **does not mention Key MSP** (keeps this a clean stand-alone brand).
 - [ ] **Pricing.** "Homes from $750" is a placeholder anchor to qualify leads — set your real number.
 - [ ] **Social image** (optional): add an `og:image` for nice link previews.
